@@ -1,0 +1,22 @@
+# Router 
+
+# Konfigurasi IP static/DHCP
+cat << EOF > /etc/network/interfaces
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+    address 10.92.0.129
+    netmask 255.255.255.128
+
+auto eth1
+iface eth1 inet static
+    address 10.92.0.30
+    netmask 255.255.255.252
+EOF
+
+# Misi 1 no 3
+echo 1 > /proc/sys/net/ipv4/ip_forward
+# Default route ke Pelargir
+ip route add default via 10.92.0.29
