@@ -422,3 +422,8 @@ Hanya untuk Durin,Khamul,Elendil,Isildur,Gilgalad dan Cirdan.
 
 ![3](images/riv.jpg)
 
+
+- Ping Moria Menuju Wilderland
+
+![4](images/wil.png)
+
