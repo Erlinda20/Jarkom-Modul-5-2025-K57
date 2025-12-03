@@ -406,5 +406,19 @@ Hanya untuk Durin,Khamul,Elendil,Isildur,Gilgalad dan Cirdan.
 
 
 
+#### Dokumentasi
 
+- Ping Moria Menuju Osgiliath
+
+![1](images/os.jpg)
+
+
+- Ping Moria Menuju IronHills
+
+![2](images/iron.jpg)
+
+
+- Ping Moria Menuju Rivendell
+
+![3](images/riv.jpg)
 
