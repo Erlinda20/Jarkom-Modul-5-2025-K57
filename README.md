@@ -144,14 +144,17 @@ Mengidentifikasi perangkat, setelah itu membagi IP menggunakan VLSM dengan tree 
         iface lo inet loopback
 
         auto eth0
-        iface eth0 inet static
-            address 10.92.0.9
-            netmask 255.255.255.252
+        iface eth0 inet dhcp
 
         auto eth1
         iface eth1 inet static
-            address 10.92.0.13
-            netmask 255.255.255.252
+        address 10.92.0.13
+        netmask 255.255.255.252
+
+        auto eth2
+        iface eth2 inet static
+        address 10.92.0.9
+        netmask 255.255.255.252
 
         auto eth3
         iface eth3 inet static
@@ -224,14 +227,9 @@ Mengidentifikasi perangkat, setelah itu membagi IP menggunakan VLSM dengan tree 
 
         auto eth2
         iface eth2 inet static
-            address 10.92.0.25
-            netmask 255.255.255.252
-
-        auto eth3
-        iface eth3 inet static
             address 10.92.0.21
             netmask 255.255.255.252
-        EOF
+
 
 #### Pelargir
 
@@ -248,7 +246,26 @@ Mengidentifikasi perangkat, setelah itu membagi IP menggunakan VLSM dengan tree 
         iface eth1 inet static
             address 10.92.0.29
             netmask 255.255.255.252
+
+        auto eth2
+        iface eth2 inet static
+            address 10.92.0.25
+            netmask 255.255.255.252
         EOF
+
+
+#### Palantir 
+
+        cat << EOF > /etc/network/interfaces
+        auto lo
+        iface lo inet loopback
+        
+        auto eth0
+        iface eth0 inet static
+            address 10.92.0.26
+            netmask 255.255.255.252
+        EOF
+
 
 
 #### Anduinbanks
@@ -266,6 +283,19 @@ Mengidentifikasi perangkat, setelah itu membagi IP menggunakan VLSM dengan tree 
         iface eth1 inet static
             address 10.92.0.129
             netmask 255.255.255.128
+        EOF
+
+
+#### IronHills
+
+        cat << EOF > /etc/network/interfaces
+        auto lo
+        iface lo inet loopback
+        
+        auto eth0
+        iface eth0 inet static
+            address 10.92.0.2
+            netmask 255.255.255.252
         EOF
 
 
