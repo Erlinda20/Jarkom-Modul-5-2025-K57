@@ -771,3 +771,8 @@ Testing dari Khamul
         nc -vz 10.92.0.9 80   # Osgiliath
 
 Akan menghasilkan Destination Host Unreachable.
+
+
+## Video Revisi
+
+[Video Demo](https://youtu.be/VLsdHOoXXu0)
