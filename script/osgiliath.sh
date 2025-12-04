@@ -46,16 +46,21 @@ route add -net 10.92.0.128 netmask 255.255.255.128 gw 10.92.0.18 # A13
 # Enable IP Forwarding
 echo 1 > /proc/sys/net/ipv4/ip_forward
 
-# Izinkan forward internal -> internet (via eth2 ke NAT1)
+# NAT menggunakan SNAT
+iptables -t nat -A POSTROUTING -o eth0 -j SNAT --to-source 192.168.122.157
+
+# Izinkan Forward LAN
+iptables -A FORWARD -i eth2 -o eth0 -j ACCEPT
+iptables -A FORWARD -i eth1 -o eth0 -j ACCEPT
+iptables -A FORWARD -i eth3 -o eth0 -j ACCEPT
+
+# Izinkan Return Traffic
 iptables -A FORWARD -i eth0 -o eth2 -j ACCEPT
-iptables -A FORWARD -i eth1 -o eth2 -j ACCEPT
-iptables -A FORWARD -i eth3 -o eth2 -j ACCEPT
+iptables -A FORWARD -i eth0 -o eth1 -j ACCEPT
+iptables -A FORWARD -i eth0 -o eth3 -j ACCEPT
 
-# Izinkan return traffic
-iptables -A FORWARD -i eth2 -m state --state ESTABLISHED,RELATED -j ACCEPT
-
-# SNAT (NO MASQUERADE) dari jaringan Aliansi ke internet
-iptables -t nat -A POSTROUTING -o eth2 -j SNAT --to-source 192.168.122.10
+# Testing
+ping 8.8.8.8 -c 4 
 
 
 

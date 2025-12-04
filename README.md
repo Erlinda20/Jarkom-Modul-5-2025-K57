@@ -330,6 +330,9 @@ Hanya untuk Durin,Khamul,Elendil,Isildur,Gilgalad dan Cirdan.
                 route add -net 10.92.0.28 netmask 255.255.255.252 gw 10.92.0.9
                 route add -net 10.92.0.128 netmask 255.255.255.128 gw 10.92.0.9
 
+                # Default untuk ke Internet
+                route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.92.0.9
+
 
 
 #### Wilderland
@@ -417,8 +420,6 @@ Hanya untuk Durin,Khamul,Elendil,Isildur,Gilgalad dan Cirdan.
 #### Arduinbanks
 
                 route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.92.0.29
-
-
 
 
 #### Dokumentasi
