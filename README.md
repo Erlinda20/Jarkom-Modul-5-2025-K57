@@ -285,123 +285,108 @@ Hanya untuk Durin,Khamul,Elendil,Isildur,Gilgalad dan Cirdan.
 
 #### Moria
 
-        # Lewat Wilderland
-        route add -net 10.92.0.64 netmask 255.255.255.192 gw 10.92.0.6   # A3
-        route add -net 10.92.0.32 netmask 255.255.255.248 gw 10.92.0.6   # A4
+                # A3
+                route add -net 10.92.0.64 netmask 255.255.255.192 gw 10.92.0.6
 
-        # Lewat Osgiliath
-        route add -net 10.92.0.12 netmask 255.255.255.252 gw 10.92.0.9   # A6
-        route add -net 10.92.0.16 netmask 255.255.255.252 gw 10.92.0.9   # A8
-        route add -net 10.92.0.40 netmask 255.255.255.248 gw 10.92.0.9   # A7
-        route add -net 10.92.1.0  netmask 255.255.255.0   gw 10.92.0.9   # A9
-        route add -net 10.92.0.20 netmask 255.255.255.252 gw 10.92.0.9   # A10
-        route add -net 10.92.0.24 netmask 255.255.255.252 gw 10.92.0.9   # A11
-        route add -net 10.92.0.28 netmask 255.255.255.252 gw 10.92.0.9   # A12
-        route add -net 10.92.0.128 netmask 255.255.255.128 gw 10.92.0.9  # A13
+                # A4
+                route add -net 10.92.0.32 netmask 255.255.255.248 gw 10.92.0.6
+
+                # A6–A13 → semua ke Osgiliath
+                route add -net 10.92.0.12 netmask 255.255.255.252 gw 10.92.0.9
+                route add -net 10.92.0.16 netmask 255.255.255.252 gw 10.92.0.9
+                route add -net 10.92.1.0 netmask 255.255.255.0 gw 10.92.0.9
+                route add -net 10.92.0.20 netmask 255.255.255.252 gw 10.92.0.9
+                route add -net 10.92.0.24 netmask 255.255.255.252 gw 10.92.0.9
+                route add -net 10.92.0.28 netmask 255.255.255.252 gw 10.92.0.9
+                route add -net 10.92.0.128 netmask 255.255.255.128 gw 10.92.0.9
+
 
 
 #### Wilderland
 
-        # Ke A1 IronHills
-        route add -net 10.92.0.0 netmask 255.255.255.252 gw 10.92.0.5
+                # A1
+                route add -net 10.92.0.0 netmask 255.255.255.252 gw 10.92.0.5
 
-        # Lewat Moria ke seluruh timur
-        route add -net 10.92.0.8  netmask 255.255.255.252 gw 10.92.0.5   # A5
-        route add -net 10.92.0.12 netmask 255.255.255.252 gw 10.92.0.5   # A6
-        route add -net 10.92.0.40 netmask 255.255.255.248 gw 10.92.0.5   # A7
-        route add -net 10.92.0.16 netmask 255.255.255.252 gw 10.92.0.5   # A8
-        route add -net 10.92.1.0  netmask 255.255.255.0   gw 10.92.0.5   # A9
-        route add -net 10.92.0.20 netmask 255.255.255.252 gw 10.92.0.5   # A10
-        route add -net 10.92.0.24 netmask 255.255.255.252 gw 10.92.0.5   # A11
-        route add -net 10.92.0.28 netmask 255.255.255.252 gw 10.92.0.5   # A12
-        route add -net 10.92.0.128 netmask 255.255.255.128 gw 10.92.0.5  # A13
+                # A5–A13
+                route add -net 10.92.0.8 netmask 255.255.255.252 gw 10.92.0.5
+                route add -net 10.92.0.12 netmask 255.255.255.252 gw 10.92.0.5
+                route add -net 10.92.0.16 netmask 255.255.255.252 gw 10.92.0.5
+                route add -net 10.92.1.0 netmask 255.255.255.0 gw 10.92.0.5
+                route add -net 10.92.0.20 netmask 255.255.255.252 gw 10.92.0.5
+                route add -net 10.92.0.24 netmask 255.255.255.252 gw 10.92.0.5
+                route add -net 10.92.0.28 netmask 255.255.255.252 gw 10.92.0.5
+                route add -net 10.92.0.128 netmask 255.255.255.128 gw 10.92.0.5
+
 
 
 #### Osgiliath
 
-        # Lewat Moria (arah barat)
-        route add -net 10.92.0.0 netmask 255.255.255.252 gw 10.92.0.10   # A1
-        route add -net 10.92.0.4 netmask 255.255.255.252 gw 10.92.0.10   # A2
-        route add -net 10.92.0.64 netmask 255.255.255.192 gw 10.92.0.10  # A3
-        route add -net 10.92.0.32 netmask 255.255.255.248 gw 10.92.0.10  # A4
+                # Ke A1–A4 via Moria
+                route add -net 10.92.0.0 netmask 255.255.255.252 gw 10.92.0.10
+                route add -net 10.92.0.4 netmask 255.255.255.252 gw 10.92.0.10
+                route add -net 10.92.0.64 netmask 255.255.255.192 gw 10.92.0.10
+                route add -net 10.92.0.32 netmask 255.255.255.248 gw 10.92.0.10
 
-        # Lewat Rivendell
-        route add -net 10.92.0.40 netmask 255.255.255.248 gw 10.92.0.14  # A7
+                # Ke A7 via Rivendell
+                route add -net 10.92.0.40 netmask 255.255.255.248 gw 10.92.0.14
 
-        # Lewat Minastir (arah timur)
-        route add -net 10.92.1.0  netmask 255.255.255.0   gw 10.92.0.18  # A9
-        route add -net 10.92.0.20 netmask 255.255.255.252 gw 10.92.0.18  # A10
-        route add -net 10.92.0.24 netmask 255.255.255.252 gw 10.92.0.18  # A11
-        route add -net 10.92.0.28 netmask 255.255.255.252 gw 10.92.0.18  # A12
-        route add -net 10.92.0.128 netmask 255.255.255.128 gw 10.92.0.18 # A13
+                # Ke A9–A13 via Minastir
+                route add -net 10.92.1.0 netmask 255.255.255.0 gw 10.92.0.18
+                route add -net 10.92.0.20 netmask 255.255.255.252 gw 10.92.0.18
+                route add -net 10.92.0.24 netmask 255.255.255.252 gw 10.92.0.18
+                route add -net 10.92.0.28 netmask 255.255.255.252 gw 10.92.0.18
+                route add -net 10.92.0.128 netmask 255.255.255.128 gw 10.92.0.18
 
 
 #### Rivendell
 
-        route add -net 10.92.0.0  netmask 255.255.255.252 gw 10.92.0.13 # A1
-        route add -net 10.92.0.4  netmask 255.255.255.252 gw 10.92.0.13 # A2
-        route add -net 10.92.0.64 netmask 255.255.255.192 gw 10.92.0.13 # A3
-        route add -net 10.92.0.32 netmask 255.255.255.248 gw 10.92.0.13 # A4
-        route add -net 10.92.0.8  netmask 255.255.255.252 gw 10.92.0.13 # A5
-        route add -net 10.92.0.16 netmask 255.255.255.252 gw 10.92.0.13 # A8
-        route add -net 10.92.1.0  netmask 255.255.255.0   gw 10.92.0.13 # A9
-        route add -net 10.92.0.20 netmask 255.255.255.252 gw 10.92.0.13 # A10
-        route add -net 10.92.0.24 netmask 255.255.255.252 gw 10.92.0.13 # A11
-        route add -net 10.92.0.28 netmask 255.255.255.252 gw 10.92.0.13 # A12
-        route add -net 10.92.0.128 netmask 255.255.255.128 gw 10.92.0.13 # A13
+                # Semua subnet yang bukan A6/A7:
+
+                route add -net 10.92.0.0 netmask 255.255.255.252 gw 10.92.0.13
+                route add -net 10.92.0.4 netmask 255.255.255.252 gw 10.92.0.13
+                route add -net 10.92.0.8 netmask 255.255.255.252 gw 10.92.0.13
+                route add -net 10.92.0.16 netmask 255.255.255.252 gw 10.92.0.13
+                route add -net 10.92.1.0 netmask 255.255.255.0 gw 10.92.0.13
+                route add -net 10.92.0.20 netmask 255.255.255.252 gw 10.92.0.13
+                route add -net 10.92.0.24 netmask 255.255.255.252 gw 10.92.0.13
+                route add -net 10.92.0.28 netmask 255.255.255.252 gw 10.92.0.13
+                route add -net 10.92.0.128 netmask 255.255.255.128 gw 10.92.0.13
+
 
 
 #### Minastir
 
-        # Lewat Osgiliath
-        route add -net 10.92.0.0  netmask 255.255.255.252 gw 10.92.0.17 # A1
-        route add -net 10.92.0.4  netmask 255.255.255.252 gw 10.92.0.17 # A2
-        route add -net 10.92.0.64 netmask 255.255.255.192 gw 10.92.0.17 # A3
-        route add -net 10.92.0.32 netmask 255.255.255.248 gw 10.92.0.17 # A4
-        route add -net 10.92.0.8  netmask 255.255.255.252 gw 10.92.0.17 # A5
-        route add -net 10.92.0.12 netmask 255.255.255.252 gw 10.92.0.17 # A6
-        route add -net 10.92.0.40 netmask 255.255.255.248 gw 10.92.0.17 # A7
-        route add -net 10.92.0.16 netmask 255.255.255.252 gw 10.92.0.17 # A8
+                # Ke A1–A7 via Osgiliath
+                route add -net 10.92.0.0 netmask 255.255.255.252 gw 10.92.0.17
+                route add -net 10.92.0.4 netmask 255.255.255.252 gw 10.92.0.17
+                route add -net 10.92.0.8 netmask 255.255.255.252 gw 10.92.0.17
+                route add -net 10.92.0.12 netmask 255.255.255.252 gw 10.92.0.17
+                route add -net 10.92.0.40 netmask 255.255.255.248 gw 10.92.0.17
 
-        # Lewat Pelargir
-        route add -net 10.92.0.28  netmask 255.255.255.252 gw 10.92.0.22 # A12
-        route add -net 10.92.0.128 netmask 255.255.255.128 gw 10.92.0.22 # A13
+                # Ke A11–A13 via Pelargir
+                route add -net 10.92.0.24 netmask 255.255.255.252 gw 10.92.0.22
+                route add -net 10.92.0.28 netmask 255.255.255.252 gw 10.92.0.22
+                route add -net 10.92.0.128 netmask 255.255.255.128 gw 10.92.0.22
+
 
 
 #### Pelargir
 
-        # Lewat Minastir
-        route add -net 10.92.0.0  netmask 255.255.255.252 gw 10.92.0.21
-        route add -net 10.92.0.4  netmask 255.255.255.252 gw 10.92.0.21
-        route add -net 10.92.0.64 netmask 255.255.255.192 gw 10.92.0.21
-        route add -net 10.92.0.32 netmask 255.255.255.248 gw 10.92.0.21
-        route add -net 10.92.0.8  netmask 255.255.255.252 gw 10.92.0.21
-        route add -net 10.92.0.12 netmask 255.255.255.252 gw 10.92.0.21
-        route add -net 10.92.0.40 netmask 255.255.255.248 gw 10.92.0.21
-        route add -net 10.92.0.16 netmask 255.255.255.252 gw 10.92.0.21
-        route add -net 10.92.1.0  netmask 255.255.255.0   gw 10.92.0.21
-        route add -net 10.92.0.20 netmask 255.255.255.252 gw 10.92.0.21
-        route add -net 10.92.0.24 netmask 255.255.255.252 gw 10.92.0.21
+                # Ke A1–A9 via Minastir
+                route add -net 10.92.0.0 netmask 255.255.255.252 gw 10.92.0.21
+                route add -net 10.92.0.4 netmask 255.255.255.252 gw 10.92.0.21
+                route add -net 10.92.0.8 netmask 255.255.255.252 gw 10.92.0.21
+                route add -net 10.92.0.12 netmask 255.255.255.252 gw 10.92.0.21
+                route add -net 10.92.0.16 netmask 255.255.255.252 gw 10.92.0.21
+                route add -net 10.92.1.0 netmask 255.255.255.0 gw 10.92.0.21
 
-        # Lewat AnduinBanks
-        route add -net 10.92.0.128 netmask 255.255.255.128 gw 10.92.0.30
+                # Ke A13 via AnduinBanks
+                route add -net 10.92.0.128 netmask 255.255.255.128 gw 10.92.0.30
 
 
 #### Arduinbanks
 
-
-        route add -net 10.92.0.0  netmask 255.255.255.252 gw 10.92.0.29
-        route add -net 10.92.0.4  netmask 255.255.255.252 gw 10.92.0.29
-        route add -net 10.92.0.64 netmask 255.255.255.192 gw 10.92.0.29
-        route add -net 10.92.0.32 netmask 255.255.255.248 gw 10.92.0.29
-        route add -net 10.92.0.8  netmask 255.255.255.252 gw 10.92.0.29
-        route add -net 10.92.0.12 netmask 255.255.255.252 gw 10.92.0.29
-        route add -net 10.92.0.40 netmask 255.255.255.248 gw 10.92.0.29
-        route add -net 10.92.0.16 netmask 255.255.255.252 gw 10.92.0.29
-        route add -net 10.92.1.0  netmask 255.255.255.0   gw 10.92.0.29
-        route add -net 10.92.0.20 netmask 255.255.255.252 gw 10.92.0.29
-        route add -net 10.92.0.24 netmask 255.255.255.252 gw 10.92.0.29
-
+                route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.92.0.29
 
 
 
